@@ -29,11 +29,11 @@ for interval in $(cat $ref/intervals/intervals.list); do
         --tmp-dir /master/kbailey/sm_single_gt/temp"
 
 # Save the header as a script for each individual loop
-      cat header.qsub.sh >Sm_${NAME}gvcf.sh
+      cat header.qsub.sh >${NAME}gvcf.sh
 # Modify the header to change the name of the job and log file
-      sed -i "s/NAME/Sm_${NAME}/g" Sm_${NAME}gvcf.sh
+      sed -i "s/NAME/${NAME}/g" ${NAME}gvcf.sh
 # Append the command to the new script
-      echo $CMD >>Sm_${NAME}gvcf.sh
+      echo $CMD >>${NAME}gvcf.sh
 # Execute the script on the server
-      qsub Sm_${NAME}gvcf.sh
+      qsub ${NAME}gvcf.sh
 done
