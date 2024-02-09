@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Calculate LD stats in windows 
 pop=("EG" "BRE" "LE" "OR" "NMRI" "br" "tz" "ne" "sn")
 
