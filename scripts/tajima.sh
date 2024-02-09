@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 pop=("EG" "BRE" "LE" "OR" "NMRI" "br" "tz" "ne" "sn")
 
