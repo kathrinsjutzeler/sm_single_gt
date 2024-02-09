@@ -4,21 +4,21 @@ echo """
 #$ -cwd
 #$ -S /bin/bash
 #$ -N As_SAMPLE
-#$ -o /master/kbailey/ascaris_test/results/logs/haplo.SAMPLE_INTERVAL.log
+#$ -o /master/kbailey/sm_single_gt/results/logs/haplo.SAMPLE_INTERVAL.log
 #$ -j y
 #$ -q all.q
 #$ -pe smp 1
 
 """ >header.qsub.sh
 
-REF_DIR="/master/kbailey/ascaris_test/data/reference"
-RESULTS_DIR="/master/kbailey/ascaris_test/results"
+REF_DIR="/master/kbailey/sm_single_gt/data/reference"
+RESULTS_DIR="/master/kbailey/sm_single_gt/results"
 
-mkdir /master/kbailey/ascaris_test/results/haplo
+mkdir /master/kbailey/sm_single_gt/results/haplo
 mkdir /master/kbailey/temp/haplo
 
 for interval in $(cat $REF_DIR/intervals/intervals.list); do
-  for sample in $(cat /master/kbailey/ascaris_test/data/part_samples.txt); do
+  for sample in $(cat /master/kbailey/sm_single_gt/data/part_samples.txt); do
     NUM=$(echo ${interval} | cut -f1 -d"-")
     SAM=$(echo ${sample} | cut -f1 -d"-")
 	
@@ -37,7 +37,7 @@ for interval in $(cat $REF_DIR/intervals/intervals.list); do
 
     echo $CMD >>${SAM}_${NUM}.sh
 
-    #qsub -V -cwd -S /bin/bash -N haplo_${sample}_${interval} -o /master/kbailey/ascaris_test/results/logs/haplo.o_${sample}_${interval}.log  ${sample}_${interval}.sh
+    #qsub -V -cwd -S /bin/bash -N haplo_${sample}_${interval} -o /master/kbailey/sm_single_gt/results/logs/haplo.o_${sample}_${interval}.log  ${sample}_${interval}.sh
     qsub ${SAM}_${NUM}.sh
   done
 done
