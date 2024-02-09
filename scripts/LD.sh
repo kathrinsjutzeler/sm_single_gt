@@ -1,3 +1,4 @@
+# Calculate LD stats in windows 
 pop=("EG" "BRE" "LE" "OR" "NMRI" "br" "tz" "ne" "sn")
 
 mkdir ~/sm_single_gt/results/ld_v10
