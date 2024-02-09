@@ -26,11 +26,10 @@ for sample in $(cat /master/kbailey/sm_single_gt/data/seq_data/test_list.txt);
   samtools flagstat $RESULTS_DIR/nodups/${sample}.bam > ${sample}.flagstat;
   samtools index $RESULTS_DIR/nodups/${sample}.bam"
 
-    cat header.qsub.sh >Sm_${SAM}.sh
-    sed -i "s/SAMPLE/Sm_${SAM}/g" Sm_${SAM}.sh
+    cat header.qsub.sh >${SAM}.sh
+    sed -i "s/SAMPLE/${SAM}/g" ${SAM}.sh
 
-    echo "$CMD" >>Sm_${SAM}.sh
-
-    #qsub -V -cwd -S /bin/bash -N haplo_${sample}_${interval} -o /master/kbailey/ascaris_test/results/logs/haplo.o_${sample}_${interval}.log  ${sample}_${interval}.sh
-    qsub Sm_${SAM}.sh
+    echo "$CMD" >>${SAM}.sh
+    
+    qsub ${SAM}.sh
   done
