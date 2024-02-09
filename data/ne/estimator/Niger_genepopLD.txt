@@ -1,0 +1,43 @@
+Output from NeEstimator v2.1
+Starting time: Tue Jan  2 17:57:19 2024
+Input File: "Niger_genepop.gen"
+
+Chromosomes, followed by a colon and the number of loci in Genotype Input File:
+SM_V10_1:  7437,SM_V10_3:  5061,SM_V10_4:  3915,SM_V10_2:  5421,SM_V10_6:  2266,
+SM_V10_5:  2108,SM_V10_7:  1410
+Number of loci seen in genotype and [chromosomes/loci] files: 27618
+Each pair of loci are taken in distinct chromosomes.
+Maximum number of locus pairs = 312775124
+
+Number of Loci = 27618
+
+LD mating model: Random
+
+(Symbol "No S*" in Frequency means that NO Singleton Alleles are accepted.)
+
+Population     1 [Sm-NE-Di158-1.hc.vcf.gz]  (Number of Individuals = 8)
+****************
+--------------------------------------------------------------------------------------
+Lowest Allele Frequency Used     0.100       0.050       0.020       No S*         0+
+--------------------------------------------------------------------------------------
+
+LINKAGE DISEQUILIBRIUM METHOD
+
+Harmonic Mean Sample Size =        5.0         6.0         6.0         6.3         6.0
+Independent Comparisons =   66022891   267075316   267075316    45113348   267075316
+OverAll r^2 =                 0.260568    0.214304    0.214304    0.233827    0.214304
+Expected r^2 Sample =         0.267972    0.232170    0.232170    0.230909    0.232170
+Estimated Ne^ =               Infinite    Infinite    Infinite       103.8    Infinite
+
+95% CIs for Ne^
+* Parametric                  Infinite    Infinite    Infinite       100.4    Infinite
+                              Infinite    Infinite    Infinite       107.4    Infinite
+
+* JackKnife on Samples            21.9    Infinite    Infinite        14.7    Infinite
+                              Infinite    Infinite    Infinite    Infinite    Infinite
+
+**************************************************************************************
+
+Ending time: Tue Jan  2 18:06:28 2024
+-------------------------------------
+

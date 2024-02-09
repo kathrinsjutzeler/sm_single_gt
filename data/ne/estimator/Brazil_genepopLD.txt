@@ -1,0 +1,43 @@
+Output from NeEstimator v2.1
+Starting time: Tue Jan  2 16:09:40 2024
+Input File: "Brazil_genepop.gen"
+
+Chromosomes, followed by a colon and the number of loci in Genotype Input File:
+SM_V10_1: 10696,SM_V10_3:  7116,SM_V10_4:  5802,SM_V10_2:  7380,SM_V10_6:  3573,
+SM_V10_5:  2795,SM_V10_7:  2046
+Number of loci seen in genotype and [chromosomes/loci] files: 39408
+Each pair of loci are taken in distinct chromosomes.
+Maximum number of locus pairs = 637528259
+
+Number of Loci = 39408
+
+LD mating model: Random
+
+(Symbol "No S*" in Frequency means that NO Singleton Alleles are accepted.)
+
+Population     1 [Sm-BR-PdV-0447-1.hc.vcf.gz]  (Number of Individuals = 40)
+****************
+--------------------------------------------------------------------------------------
+Lowest Allele Frequency Used     0.100       0.050       0.020       No S*         0+
+--------------------------------------------------------------------------------------
+
+LINKAGE DISEQUILIBRIUM METHOD
+
+Harmonic Mean Sample Size =       18.2        19.5        20.9        26.1        25.4
+Independent Comparisons =  111842278   185219550   280448035   245506875   565984142
+OverAll r^2 =                 0.034347    0.034035    0.034031    0.032844    0.032322
+Expected r^2 Sample =         0.034231    0.033941    0.034056    0.032803    0.032245
+Estimated Ne^ =                 2648.2      3290.2    Infinite      7580.5      4008.4
+
+95% CIs for Ne^
+* Parametric                    2457.6      3063.1    Infinite      6632.2      3820.7
+                                2870.6      3553.7    Infinite      8846.6      4215.1
+
+* JackKnife on Samples           288.3       339.5       366.5       377.4       450.0
+                              Infinite    Infinite    Infinite    Infinite    Infinite
+
+**************************************************************************************
+
+Ending time: Tue Jan  2 17:01:27 2024
+-------------------------------------
+

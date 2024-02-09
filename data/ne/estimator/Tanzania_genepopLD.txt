@@ -1,0 +1,45 @@
+Output from NeEstimator v2.1
+Starting time: Tue Jan  2 16:58:28 2024
+Input File: "Tanzania_genepop.gen"
+
+Chromosomes, followed by a colon and the number of loci in Genotype Input File:
+SM_V10_1: 32148,SM_V10_3: 17818,SM_V10_4: 16649,SM_V10_2: 17387,SM_V10_6:  8022,
+SM_V10_5:  6165,SM_V10_7:  5659
+Number of loci seen in genotype and [chromosomes/loci] files: 103848
+Each pair of loci are taken in distinct chromosomes.
+Maximum number of locus pairs = 4359775558
+
+Number of Loci = 103848
+
+LD mating model: Random
+
+(Symbol "No S*" in Frequency means that NO Singleton Alleles are accepted.)
+
+Population     1 [Sm-TZ-009-1-1.hc.vcf.gz]  (Number of Individuals = 33)
+****************
+--------------------------------------------------------------------------------------
+Lowest Allele Frequency Used     0.100       0.050       0.020       No S*         0+
+--------------------------------------------------------------------------------------
+
+LINKAGE DISEQUILIBRIUM METHOD
+
+Harmonic Mean Sample Size =       17.1        18.4        20.3        24.6        24.2
+Independent Comparisons =  293958224   637677444  1492385224  1139491841  3867852579
+OverAll r^2 =                 0.042265    0.041903    0.041850    0.039271    0.038570
+Expected r^2 Sample =         0.042164    0.041933    0.041967    0.039238    0.039054
+Estimated Ne^ =                 3027.6    Infinite    Infinite      9520.9    Infinite
+
+95% CIs for Ne^
+* Parametric                    2836.8    Infinite    Infinite      8658.4    Infinite
+                                3245.8    Infinite    Infinite     10577.7    Infinite
+
+* JackKnife on Samples           236.6       269.7       291.8       315.6     SKIPPED
+                              Infinite    Infinite    Infinite    Infinite
+
+  CIs by Jackknife are skipped when number of polymorphic loci > 100000
+
+**************************************************************************************
+
+Ending time: Tue Jan  2 20:03:45 2024
+-------------------------------------
+

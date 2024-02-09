@@ -1,0 +1,43 @@
+Output from NeEstimator v2.1
+Starting time: Tue Jan  2 16:55:28 2024
+Input File: "LE_genepop.gen"
+
+Chromosomes, followed by a colon and the number of loci in Genotype Input File:
+SM_V10_1:  2643,SM_V10_3:  1746,SM_V10_4:  1582,SM_V10_2:  1791,SM_V10_6:   773,
+SM_V10_5:   817,SM_V10_7:   775
+Number of loci seen in genotype and [chromosomes/loci] files: 10127
+Each pair of loci are taken in distinct chromosomes.
+Maximum number of locus pairs = 42473058
+
+Number of Loci = 10127
+
+LD mating model: Random
+
+(Symbol "No S*" in Frequency means that NO Singleton Alleles are accepted.)
+
+Population     1 [104-S18-L003.hc.vcf.gz]  (Number of Individuals = 24)
+****************
+--------------------------------------------------------------------------------------
+Lowest Allele Frequency Used     0.100       0.050       0.020       No S*         0+
+--------------------------------------------------------------------------------------
+
+LINKAGE DISEQUILIBRIUM METHOD
+
+Harmonic Mean Sample Size =       19.8        19.7        19.6        20.5        19.6
+Independent Comparisons =   21044967    27704833    41261946    29746096    41261946
+OverAll r^2 =                 0.054551    0.055309    0.055938    0.055046    0.055938
+Expected r^2 Sample =         0.053375    0.053981    0.054755    0.053719    0.054755
+Estimated Ne^ =                  260.3       230.1       258.5       230.3       258.5
+
+95% CIs for Ne^
+* Parametric                     253.2       225.1       253.3       225.5       253.3
+                                 267.9       235.3       263.9       235.3       263.9
+
+* JackKnife on Samples            71.6        69.8        76.9        70.5        76.9
+                              Infinite    Infinite    Infinite    Infinite    Infinite
+
+**************************************************************************************
+
+Ending time: Tue Jan  2 16:58:37 2024
+-------------------------------------
+

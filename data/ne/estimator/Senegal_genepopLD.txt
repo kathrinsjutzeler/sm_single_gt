@@ -1,0 +1,43 @@
+Output from NeEstimator v2.1
+Starting time: Tue Jan  2 15:46:40 2024
+Input File: "Senegal_genepop.gen"
+
+Chromosomes, followed by a colon and the number of loci in Genotype Input File:
+SM_V10_1: 13926,SM_V10_3:  8407,SM_V10_4:  7010,SM_V10_2:  9724,SM_V10_6:  3592,
+SM_V10_5:  3202,SM_V10_7:  2286
+Number of loci seen in genotype and [chromosomes/loci] files: 48147
+Each pair of loci are taken in distinct chromosomes.
+Maximum number of locus pairs = 940722572
+
+Number of Loci = 48147
+
+LD mating model: Random
+
+(Symbol "No S*" in Frequency means that NO Singleton Alleles are accepted.)
+
+Population     1 [Sm-SN-Nd103-1.hc.vcf.gz]  (Number of Individuals = 23)
+****************
+--------------------------------------------------------------------------------------
+Lowest Allele Frequency Used     0.100       0.050       0.020       No S*         0+
+--------------------------------------------------------------------------------------
+
+LINKAGE DISEQUILIBRIUM METHOD
+
+Harmonic Mean Sample Size =       14.1        14.6        18.6        18.1        18.6
+Independent Comparisons =   35985295    87649911   826006399   122176529   826006399
+OverAll r^2 =                 0.066141    0.065571    0.055853    0.060525    0.055853
+Expected r^2 Sample =         0.062983    0.063202    0.057192    0.058339    0.057192
+Estimated Ne^ =                   95.8       128.3    Infinite       139.2    Infinite
+
+95% CIs for Ne^
+* Parametric                      94.9       127.3    Infinite       138.2    Infinite
+                                  96.8       129.4    Infinite       140.2    Infinite
+
+* JackKnife on Samples            31.9        45.7      3345.1        52.9      3345.1
+                              Infinite    Infinite    Infinite    Infinite    Infinite
+
+**************************************************************************************
+
+Ending time: Tue Jan  2 16:24:59 2024
+-------------------------------------
+
