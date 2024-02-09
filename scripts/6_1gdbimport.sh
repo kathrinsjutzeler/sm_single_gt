@@ -34,7 +34,7 @@ for interval in $(cat $REF/intervals/intervals.list); do
 # Save the header as a script for each individual loop
       cat header.qsub.sh >${NAME}.sh
 # Modify the header to change the name of the job and log file
-      sed -i "s/NAME/S${NAME}/g" ${NAME}.sh
+      sed -i "s/NAME/${NAME}/g" ${NAME}.sh
 # Append the command to the new script
       echo $CMD >>${NAME}.sh
 # Execute the script on the server
