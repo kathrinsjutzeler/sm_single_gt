@@ -50,7 +50,7 @@ vcftools --vcf $RESULTS_DIR/filtered_v10/merged_bisnp_v10.vcf \
 # Filter missing sites 
   cat $RESULTS_DIR/filtered_v10/missing_per_site.tbl \
   	| sed 1d `# removed header line` \
-  	| awk '{if ($6<=0.58) print $1"\t"$2}' `# keep lines with <=58% missingness and print out columns 1 (CHR) and 2 (POS)`\
+  	| awk '{if ($6<=0.60) print $1"\t"$2}' `# keep lines with <=60% missingness and print out columns 1 (CHR) and 2 (POS)`\
   	>$RESULTS_DIR/filtered_v10/high_freq_gt_sites.list
 
   # Generate new working file excluding sites with >=58% missingness
