@@ -1,29 +1,33 @@
 #!/bin/bash
 
 # Calculate LD stats in windows 
-pop=("EG" "BRE" "LE" "OR" "NMRI" "br" "tz" "ne" "sn")
+for pop in EG NMRI BRE LE OR; do 
 
-mkdir ~/sm_single_gt/results/ld_v10
-
-for pop in ${pop[@]}; do
-
-gatk SelectVariants -V /master/kbailey/sm_single_gt/results/filtered_v10/maf05_nuclear_CDS_v10.vcf \
---exclude-sample-name /master/kbailey/sm_single_gt/results/lists/outgroup.args \
---exclude-intervals SM_V10_Z \
---exclude-intervals SM_V10_WSR \
---allow-nonoverlapping-command-line-samples \
---sample-name /master/kbailey/sm_single_gt/results/lists/${pop}.args \
--O /master/kbailey/sm_single_gt/results/ld_v10/maf05_CDS_nosex_${pop}.vcf \
--R /master/kbailey/egg_RNA/data/reference/schistosoma_mansoni.PRJEA36577.WBPS18.genomic.fa ;
+gatk SelectVariants -V /master/kbailey/sm_single_gt/results/filtered/annotated_snps_${pop}.vcf.gz \
+    --exclude-intervals SM_V10_WSR \
+    --exclude-intervals SM_V10_Z \
+    --exclude-intervals SM_V10_MITO \
+    --exclude-non-variants \
+    -O /master/kbailey/sm_single_gt/results/filtered/annotated_snps_autosomal_${pop}.vcf.gz;
 done
 
-pop=("EG" "BRE" "LE" "OR" "NMRI" "br" "tz" "ne" "sn")
-for pop in ${pop[@]}; do
+#MAF filter
+for pop in EG NMRI BRE LE OR; do 
+vcftools \
+  --gzvcf /master/kbailey/sm_single_gt/results/filtered_lab/annotated_snps_autosomal_${pop}.vcf.gz \
+  --maf 0.05 `# Rare variants` \
+  --recode \
+  --recode-INFO-all \
+  --stdout \
+  >/master/kbailey/sm_single_gt/results/filtered_lab/maf05_autosomal_${pop}.vcf ;
+done
+
+for pop in EG NMRI BRE LE OR; do 
 plink \
             --threads 6 \
             --r2 \
-            --vcf /master/kbailey/sm_single_gt/results/ld_v10/maf05_CDS_nosex_${pop}.vcf \
-            --out ~/sm_single_gt/results/ld_v10/maf05_CDS_nosex_${pop}.ld \
+            --vcf master/kbailey/sm_single_gt/results/sfs/maf05_CDS_autosome_${pop}_v10.vcf \
+            --out ~/sm_single_gt/results/ld/maf05_${pop}.ld \
             --double-id \
             --allow-extra-chr \
             --ld-window-r2 0.0 \
