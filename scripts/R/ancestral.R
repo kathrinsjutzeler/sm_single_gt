@@ -1,4 +1,4 @@
-### ALLELE FREQUENCY 5/30/23 ####
+### Derived Variants 7/11/2025 ####
 library(tidyverse)
 library(rstatix)
 
@@ -69,54 +69,6 @@ order <- c('BRE', 'EG', 'LE', 'OR', 'NMRI', 'Brazil', 'Niger', 'Senegal', 'Tanza
 
 df4$pop <- factor(df4$pop, levels = order)
 
-# # all this work for nothing, going back to original bar plot
-# f_break <- function(population){
-#   
-#   breaks <- seq(0,86037402, 25000)
-#   
-#   query <- filter(df4, pop == population) %>% group_by(chrom)
-#   
-#     chr_list <- group_split(query)
-#     
-#     dataframe <- lapply(chr_list, function(df_chr) {
-#       binned <- stats.bin(x = df_chr$pos, y = df_chr$af, breaks = breaks)
-#       
-#       data.frame(
-#         chrom = unique(df_chr$chrom),
-#         centers = binned$centers,
-#         n = binned$stats['N',]
-#       )
-#     })
-#      result <- bind_rows(dataframe, .id = "chrom")
-#   
-#   return(result)
-# }
-#  
-# counts <- lapply(order, f_break)
-# 
-# names(counts) <- order
-# df5 <- bind_rows(counts, .id = 'pop')
-# 
-# chrom.labs <- c('1', '2', '3', '4', '5', '6', '7')
-# names(chrom.labs) <- levels(factor(df5$chrom))
-# 
-# df5$pop <- factor(df5$pop, levels = order)
-# 
-# fixed_SNV <- ggplot(subset(df5, n != 0), aes(centers, n, color = pop)) +
-#   geom_point() +
-#   facet_grid(pop~chrom, switch = "x", scales = 'free_x', space = 'free_x',
-#              labeller = labeller(chrom = chrom.labs)) +
-#   scale_color_manual(values = all_colors) +
-#   theme_minimal() +
-#   labs(y = "Number of fixed SNVs", x = "Chromosome") +
-#   theme(axis.text.x = element_blank(), axis.line.x = element_line(), 
-#         axis.title = element_text(size = 16, face = 'bold'), text = element_text(size =12),
-#         axis.line.y = element_line(), panel.grid = element_blank(), legend.position = 'none') 
-# 
-
-#ggsave("fixed_SNPs.tiff", width = 8, height = 6, dpi = 300, bg = 'white')
-
-
 df4 <- df4 %>% mutate(origin = ifelse(pop %in% c('BRE', 'EG', 'LE', 'OR', 'NMRI'),'Laboratory', 'Field'))
 
 df4$origin <- factor(df4$origin, levels = c('Laboratory', 'Field'))
@@ -127,7 +79,6 @@ counts2 <- df4 %>%
   count()
 
 derived_res <- counts2 %>% ungroup() %>% wilcox_test(n ~ origin) %>% mutate(pop = 'EG', origin = 'Laboratory')
-
 
 fixed_SNV <- ggplot(counts2, aes(pop, n,  fill=pop )) +
   geom_col() +
